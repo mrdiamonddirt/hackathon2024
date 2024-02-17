@@ -7,6 +7,8 @@ import Head from "next/head";
 import Image from "next/image";
 // import "../styles/page.css"
 import Barchart from "@/components/Barchart"
+import Linechart from "@/components/Linechart"
+
 export default function Home() {
   // const session = useSession()
   const [user, setUser] = useState(null);
@@ -148,9 +150,11 @@ export default function Home() {
         </div>
         <div className="mb-8 flex mx-auto items-center justify-center">
          <Barchart />
+         <Linechart />
+         
           <img
-            src="Logo.png"
-            alt="ReviewFluence Logo"
+            src="thumbnail_line_plot.png"
+            alt="line_plot"
             className="h-32 w-auto"
           />
         </div>
