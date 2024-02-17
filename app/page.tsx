@@ -1,11 +1,16 @@
 'use client'
 import Login from './Login'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { getAuth } from 'firebase/auth'
 // import {signOut, useSession} from 'next-auth/react'
 import Head from 'next/head';
+// import "../styles/page.css"
 
 export default function Home() {
   // const session = useSession()
+  const [user, setUser] = useState(null)
+
+
   return (
     <>
       <Head>
@@ -19,13 +24,13 @@ export default function Home() {
           <img src="Logo.png" alt="ReviewFluence Logo" className="h-32 w-auto" />
         </div>
         <h1 className="text-2xl font-semibold text-gray-800">ReviewFluence</h1>
+        <li>{<Login/>}</li>
       </header>
 
       <nav className="bg-gray-800 text-white">
         <div className="container mx-auto flex items-center justify-between py-4 px-8">
           <ul className="flex space-x-4">
             <li><a href="#" className="hover:text-gray-300">Home</a></li>
-            <li>{<Login/>}</li>
           </ul>
         </div>
       </nav>

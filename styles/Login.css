@@ -1,0 +1,37 @@
+.profileimg {
+    border-radius: 50%;
+    border: 2px solid #000000;
+}
+
+.profiletext {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+    margin-top: 10px;
+}
+
+.profilebtn {
+    margin-top: 20px;
+    background-color: #000000;
+    color: #2cb8c2;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.img-container {
+    display: flex;
+    text-align: center;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /* justify-content: flex-end; */
+    /* height: 100vh; */
+}

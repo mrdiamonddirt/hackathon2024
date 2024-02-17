@@ -24,8 +24,9 @@ export default async function RootLayout({
       <body className={inter.className}>
         {/* learn more at https://garchi.co.uk/documentation/1.0/headlessweb/next-app-router */}
         <Script src="https://garchi.co.uk/script/index.es.js" />
-        <Firebase />
+        <Firebase>
         {children}
+        </Firebase>
       </body>
     </html>
   );

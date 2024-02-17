@@ -1,6 +1,8 @@
 'use client'
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import "../styles/Login.css"
+import { FirebaseContext } from "@/components/Firebase";
 
 // signInWithPopup(auth, provider)
 //   .then((result) => {
@@ -23,14 +25,14 @@ import { useState } from "react";
 //   });
 
 export default function Login() {
-    const [user, setUser] = useState(null)
+    const {user, setUser} = useContext(FirebaseContext)
     const [loading, setLoading] = useState(true)
     const [signedIn, setSignedIn] = useState(false)
 
     function signOut() {
         const auth = getAuth();
         auth.signOut().then(() => {
-            setUser(null)
+            setUser({})
             setSignedIn(false)
             setLoading(false)
         }).catch((error) => {
@@ -41,7 +43,6 @@ export default function Login() {
     function SignIn () {
         var auth = getAuth();
         const provider = new GoogleAuthProvider()
-    
     
         signInWithPopup(auth, provider)
         .then((result) => {
@@ -72,16 +73,20 @@ export default function Login() {
 
     return (
         <>
-        {!signedIn ?
-         <button onClick={() => SignIn()}>Sign In</button>
+        <div className="login-container">
+        {!user?.uid ?
+         <button className="profilebtn" onClick={() => SignIn()}>Sign In</button>
          : 
          <>
-         <h1>Welcome {user.displayName}</h1>
-            <img src={user.photoURL} alt={user.displayName}/>
-            <p>Email: {user.email}</p>
-         <button onClick={() => signOut()}>Sign Out</button>
+         <h1 className="profiletext">Welcome {user.displayName}</h1>
+         <div className="img-container">
+         <button className="profilebtn" onClick={() => signOut()}>Sign Out</button>
+            <img className="profileimg" src={user.photoURL} alt={user.displayName}/>
+            </div>
+            <p className="profiletext">Email: {user.email}</p>
             </>
         }
+        </div>
         </>
     )
 }
