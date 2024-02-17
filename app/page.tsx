@@ -6,7 +6,7 @@ import { getAuth } from "firebase/auth";
 import Head from "next/head";
 import Image from "next/image";
 // import "../styles/page.css"
-
+import Barchart from "@/components/Barchart"
 export default function Home() {
   // const session = useSession()
   const [user, setUser] = useState(null);
@@ -147,12 +147,7 @@ export default function Home() {
           </div>
         </div>
         <div className="mb-8 flex mx-auto items-center justify-center">
-          <img
-            src="Logo.png"
-            alt="ReviewFluence Logo"
-            className="h-32 w-auto"
-          />
-
+         <Barchart />
           <img
             src="Logo.png"
             alt="ReviewFluence Logo"
