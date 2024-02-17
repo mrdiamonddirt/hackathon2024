@@ -37,16 +37,19 @@ export default function Barchart() {
       minorGridEnabled: true,
     });
 
-    xRenderer.labels.template.setAll({
-      rotation: -90,
-      centerY: am5.p50,
-      centerX: am5.p100,
-      paddingRight: 15,
-    });
+          xRenderer.labels.template.setAll({
+            rotation: -90,
+            centerY: am5.p50,
+            centerX: am5.p100,
+            paddingRight: 15,
+            fill: am5.color("#ffffff"), // Change label text color to white
+          });
+      
+          xRenderer.grid.template.setAll({
+            location: 1,
+            stroke: am5.color("#ffffff"), // Change grid stroke color to white
+          });
 
-    xRenderer.grid.template.setAll({
-      location: 1,
-    });
 
     let xAxis = chart.xAxes.push(
       am5xy.CategoryAxis.new(root, {
@@ -60,6 +63,10 @@ export default function Barchart() {
     let yRenderer = am5xy.AxisRendererY.new(root, {
       strokeOpacity: 0.1,
     });
+
+    yRenderer.labels.template.setAll({
+        fill: am5.color("#ffffff"), // Change label text color to white
+      });
 
     let yAxis = chart.yAxes.push(
       am5xy.ValueAxis.new(root, {
@@ -117,5 +124,5 @@ export default function Barchart() {
     return () => root.dispose()
   }, []);
 
-  return <div id="chartdiv" className="size-96 bg-white">Barchart</div>;
+  return <div id="chartdiv" className="size-96">Ratings Counts</div>;
 }
