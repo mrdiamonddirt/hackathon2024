@@ -162,7 +162,7 @@ export default function Home() {
 
       <footer className="bg-gray-800 text-white py-4">
         <div className="container mx-auto text-center">
-          &copy; 2024 ReviewFluence. All Rights Reserved.
+          &copy; Hackathon 2024 ReviewFluence.
         </div>
       </footer>
     </>
