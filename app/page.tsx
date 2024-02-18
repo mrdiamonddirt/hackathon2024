@@ -75,7 +75,7 @@ export default function Home() {
           <img
             src="thumbnail_line_plot.png"
             alt="line_plot"
-            className="h-32 w-auto"
+            className="h-64 w-auto"
           />
         </div>
       </main>
