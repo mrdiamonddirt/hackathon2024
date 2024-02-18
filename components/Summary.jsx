@@ -15,7 +15,11 @@ export default function Summary() {
                   summaries, streamlining the user's research process by
                   condensing multiple reviews into one, saving valuable time. 💡
                 </p>} */}
-                <p>{summary?.summary?.message}</p>
+                <p>Overall: {summary?.summary?.summarisation?.overall}</p>
+                <p>Positive: {summary?.summary?.summarisation?.positive}</p>
+                <p>Neutral: {summary?.summary?.summarisation?.neutral}</p>
+                <p>Negative: {summary?.summary?.summarisation?.negative}</p>
+
               </div>
               <div className="text-xl relative font-semibold mb-4 col-span-3 flex flex-col items-center">
                 <img src="Logo.png" alt="ReviewFluence Logo" />
@@ -24,7 +28,7 @@ export default function Summary() {
               </div>
             </div>
 
-            <section className="mb-8">
+            {/* <section className="mb-8">
               <h2 className="text-xl font-semibold mb-4">Reviews</h2>
               <div className="grid grid-cols-3 gap-4">
                 <div>
@@ -46,7 +50,7 @@ export default function Summary() {
                   <li className="list-circle"></li>
                 </div>
               </div>
-            </section>
+            </section> */}
           </div>
   )
 }
